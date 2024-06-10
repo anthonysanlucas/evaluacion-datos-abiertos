@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-screen-2xl px-4 lg:px-10;
+  }
+
+  .page-title {
+    @apply text-balance text-4xl font-bold leading-[1.2] text-black-dark lg:text-5xl lg:leading-[1.2];
+  }
+
+  .section-title-small {
+    @apply text-balance text-center text-base font-semibold uppercase text-black-light;
+  }
+
+  .main-btn {
+    @apply mt-10 block rounded-sm px-8 py-4 text-center font-medium shadow-md transition-colors lg:mx-0;
+  }
+
+  .float {
+    @apply animate-float;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}

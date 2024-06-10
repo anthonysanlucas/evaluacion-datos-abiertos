@@ -1,0 +1,128 @@
+---
+import ContractsArt from '@/icons/ContractsArt.astro'
+import Layout from '../layouts/Layout.astro'
+import DocsResolves from '@/icons/DocsResolves.astro'
+import ResolvedQueries from '@/icons/ResolvedQueries.astro'
+import Opportunities from '@/icons/Opportunities.astro'
+import ContractError from '@/icons/ContractError.astro'
+import ContractOption from '@/icons/ContractOption.astro'
+import ContractQuery from '@/icons/ContractQuery.astro'
+
+const statistics = [
+  {
+    number: 20,
+    description: 'Consultas Realizadas',
+    icon: ResolvedQueries
+  },
+  {
+    number: 10,
+    description: 'Reclamos Resueltos',
+    icon: DocsResolves
+  },
+  {
+    number: 5,
+    description: 'Oportunidades Encontradas',
+    icon: Opportunities
+  }
+]
+
+const features = [
+  {
+    title: '¿Quieres encontrar una oportunidad?',
+    description: 'Puedes encontrar llamados de los que puedes participar como proveedor.',
+    buttonText: 'Encontrar',
+    icon: ContractOption
+  },
+  {
+    title: '¿Tienes alguna duda?',
+    description:
+      'Si quieres realizar una consulta sobre un llamado con el que tengas una duda, puedes preguntar a los entes encargados.',
+    buttonText: 'Consultar',
+    icon: ContractQuery
+  },
+  {
+    title: '¿Algo no está bien?',
+    description:
+      'Si ya identificaste una irregularidad, puedes ayudar actuando a tiempo para que sea verificada y corregida lo más pronto posible.',
+    buttonText: 'Reportar',
+    icon: ContractError
+  }
+]
+---
+
+<Layout
+  titlePage='Plataforma de Monitoreo | ESTADO ABIERTO ECUADOR'
+  descriptionPage=''
+  currentUrl=''>
+  <!-- Hero -->
+  <section
+    class='section-container mb-16 grid min-h-[calc(100vh-64px)] place-content-center gap-16 md:grid-cols-2'>
+    <article>
+      <h1 class='mb-4 text-balance text-3xl font-bold leading-tight text-zinc-50 md:text-[40px]'>
+        TU VIAJE EN EL MUNDO DE LOS DATOS EMPIEZA AQUÍ
+      </h1>
+      <p class='mb-8 font-medium text-zinc-200'>
+        La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social (SIO)
+        una visión instantánea de su recorrido actual hacia la madurez de los datos, así como
+        herramientas y recursos relevantes para seguir adelante. Utilice los resultados para
+        identificar formas de fortalecer su práctica y compártalas para comunicar áreas de
+        oportunidad.
+      </p>
+
+      <div class='grid max-w-max gap-4'>
+        <a
+          href='/evaluacion'
+          class='flex h-12 animate-background-shine items-center justify-center gap-2 rounded-md border border-gray-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-semibold text-zinc-200 transition-colors focus:outline-none'>
+          <span>Empezar evaluación</span>
+
+          <svg
+            width='15'
+            height='15'
+            viewBox='0 0 15 15'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-5 w-5'
+            ><path
+              d='M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z'
+              fill='currentColor'
+              fill-rule='evenodd'
+              clip-rule='evenodd'></path>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </section>
+  <!-- Fin Hero -->
+
+  <!-- Why? -->
+  <div class='bg-zinc-950 py-16'>
+    <section class='section-container my-16 mt-10 gap-16'>
+      <article class='flex w-full flex-col items-start justify-center gap-8 md:flex-row'>
+        <h2 class='mb-4 text-balance text-3xl font-bold leading-tight text-zinc-50 md:text-[40px]'>
+          ¿Quién puede beneficiarse de la evaluación de la madurez de los datos?
+        </h2>
+
+        <div class='max-w-2xl'>
+          <p class='mb-4 font-medium text-zinc-200'>
+            La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social
+            (SIO) una visión instantánea de su recorrido actual hacia la madurez de los datos, así
+            como herramientas y recursos relevantes para seguir adelante. Utilice los resultados
+            para identificar formas de fortalecer su práctica y compártalas para comunicar áreas de
+            oportunidad.
+          </p>
+
+          <p class='mb-4 font-medium text-zinc-200'>
+            La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social
+            (SIO) una visión instantánea de su recorrido actual hacia la madurez de los datos, así .
+          </p>
+
+          <p class='mb-4 font-medium text-zinc-200'>
+            La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social
+            (SIO) una visión instantánea de su recorrido actual hacia la madurez de los datos, así .
+          </p>
+        </div>
+      </article>
+    </section>
+  </div>
+  <!-- Fin Why? -->
+</Layout>

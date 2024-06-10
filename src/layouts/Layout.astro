@@ -1,0 +1,61 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import HeaderPage from '@/components/HeaderPage.astro'
+import FooterPage from '@/components/FooterPage.astro'
+import '@/styles/main.css'
+import 'flowbite'
+
+interface Props {
+  currentUrl: string
+  titlePage: string
+  descriptionPage: string
+}
+
+const { titlePage, descriptionPage, currentUrl } = Astro.props
+---
+
+<!doctype html>
+<html lang='es' class='scroll-pt-10 scroll-smooth'>
+  <head>
+    <meta charset='UTF-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <ViewTransitions />
+    <title>{titlePage}</title>
+    <meta name='title' content={titlePage} />
+    <meta name='description' content={descriptionPage} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content=`https://ia.gobiernoabierto.ec/${currentUrl ?? null}` />
+    <meta property='og:title' content={titlePage} />
+    <meta property='og:description' content={descriptionPage} />
+    <meta property='og:image' content='https://i.postimg.cc/T2g88KLF/ferraraworking-ferrara.png' />
+    <meta property='twitter:card' content='summary_large_image' />
+    <meta property='twitter:url' content=`https://ia.gobiernoabierto.ec/${currentUrl ?? null}` />
+    <meta property='twitter:title' content={titlePage} />
+    <meta property='twitter:description' content={descriptionPage} />
+    <meta
+      property='twitter:image'
+      content='https://i.postimg.cc/T2g88KLF/ferraraworking-ferrara.png'
+    />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap'
+      rel='stylesheet'
+    />
+  </head>
+  <body class='relative bg-black'>
+    <div
+      class='absolute -top-4 right-0 -z-10 m-auto h-96 w-full max-w-2xl'
+      style='background:linear-gradient(106.89deg, rgba(3, 103, 166, 0.11) 15.73%, rgba(3, 103, 166, 0.24) 15.74%, rgba(3, 103, 166, 0.26) 56.49%, rgba(3, 103, 166, 0.4) 115.91%);filter:blur(118px)'>
+    </div>
+
+    <HeaderPage transition:persist />
+    <main>
+      <slot />
+    </main>
+    <FooterPage />
+    <script src='../../node_modules/flowbite/dist/flowbite.min.js'></script>
+  </body>
+</html>
