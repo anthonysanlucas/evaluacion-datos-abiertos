@@ -64,33 +64,23 @@ export function EvaluationFooterPageInfo() {
   }
 
   return (
-    <footer className="mt-8 grid place-items-end gap-4 sm:grid-cols-2">
-      <section className="flex w-full items-center justify-start gap-x-4 text-zinc-400">
-        {currentSection > 0 && (
-          <small>
-            Preguntas {currentQuestion + 1} de {maxQuestionsPerSection}
-          </small>
-        )}
-      </section>
+    <footer className="px-4">
+      {currentSection === 0 && (
+        <button
+          onClick={handleStartEvaluation}
+          className="bg-accent flex h-12 w-full items-center justify-center gap-4 rounded-md border border-primary px-6 font-semibold text-zinc-200 transition-colors hover:bg-white hover:text-primary focus:outline-none">
+          <span>Iniciar el viaje</span>
 
-      <section className="grid max-w-max gap-4">
-        {currentSection === 0 && (
-          <button
-            onClick={handleStartEvaluation}
-            className="flex h-12 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-black px-6 font-semibold text-zinc-200 transition-colors hover:bg-zinc-800 focus:outline-none">
-            <span>Iniciar el viaje</span>
-
-            <RocketIcon className="h-6 w-6 text-zinc-300" />
-          </button>
-        )}
-        {currentSection > 0 && (
-          <button
-            onClick={handleNextQuestionOrSection}
-            className="h-12 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-black px-6 font-semibold text-zinc-200 transition-colors hover:bg-zinc-800 focus:outline-none">
-            Siguiente
-          </button>
-        )}
-      </section>
+          <RocketIcon className="h-6 w-6" />
+        </button>
+      )}
+      {currentSection > 0 && (
+        <button
+          onClick={handleNextQuestionOrSection}
+          className="bg-accent h-12 w-full items-center justify-center gap-2 rounded-md border border-zinc-800 px-6 font-semibold text-zinc-200 transition-colors hover:bg-white focus:outline-none">
+          Siguiente
+        </button>
+      )}
     </footer>
   )
 }

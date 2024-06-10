@@ -12,9 +12,10 @@ function Question() {
   console.log(question)
 
   return (
-    <div className="text-white">
-      <h2 className="mb-4 text-4xl font-semibold">{question.question}</h2>
-      <h1>{question.type}</h1>
+    <div className="my-8 px-4">
+      <h2 className="mx-auto max-w-max text-2xl font-bold leading-tight text-zinc-900 lg:mx-0 lg:mb-6 lg:max-w-md">
+        {question.question}
+      </h2>
 
       <ul>
         {question.options.map((option, index) => (

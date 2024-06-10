@@ -9,9 +9,10 @@ interface Props {
   currentUrl: string
   titlePage: string
   descriptionPage: string
+  isWhiteBg?: boolean
 }
 
-const { titlePage, descriptionPage, currentUrl } = Astro.props
+const { titlePage, descriptionPage, currentUrl, isWhiteBg = false } = Astro.props
 ---
 
 <!doctype html>
@@ -41,13 +42,23 @@ const { titlePage, descriptionPage, currentUrl } = Astro.props
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
-      href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap'
+      href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap'
       rel='stylesheet'
     />
   </head>
-  <body class='relative bg-black'>
+  <!-- Body bg with black or white mode with class list -->
+
+  <body
+    class:list={[
+      { 'bg-accent': !isWhiteBg },
+      { 'bg-white': isWhiteBg },
+      'relative overflow-x-hidden'
+    ]}>
     <div
-      class='absolute -top-4 right-0 -z-10 m-auto h-96 w-full max-w-2xl'
+      class:list={[
+        { hidden: isWhiteBg },
+        { 'absolute -right-40 top-96 -z-10 m-auto h-96 w-full max-w-2xl': !isWhiteBg }
+      ]}
       style='background:linear-gradient(106.89deg, rgba(3, 103, 166, 0.11) 15.73%, rgba(3, 103, 166, 0.24) 15.74%, rgba(3, 103, 166, 0.26) 56.49%, rgba(3, 103, 166, 0.4) 115.91%);filter:blur(118px)'>
     </div>
 

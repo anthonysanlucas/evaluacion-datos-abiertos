@@ -1,19 +1,15 @@
 import toast from 'react-hot-toast'
 
 const toastEvaluationConfig = {
-  duration: 4000,
-  position: 'bottom-center',
+  duration: 3000,
+  position: 'top-center',
   style: {
-    border: '1px solid #0367A6',
+    border: '1px solid #10BCD0',
     padding: '16px',
-    color: '#d4d4d8',
-    backgroundColor: '#000',
+    color: '#e4e4e7',
+    backgroundColor: '#071E2D',
     borderRadius: '0.25rem',
     fontWeight: 'bold'
-  },
-  iconTheme: {
-    primary: '#713200',
-    secondary: '#FFFAEE'
   }
 }
 

@@ -1,19 +1,12 @@
 ---
-import ContractsArt from '@/icons/ContractsArt.astro'
 import Layout from '../layouts/Layout.astro'
-import DocsResolves from '@/icons/DocsResolves.astro'
-import ResolvedQueries from '@/icons/ResolvedQueries.astro'
-import Opportunities from '@/icons/Opportunities.astro'
-import ContractError from '@/icons/ContractError.astro'
-import ContractOption from '@/icons/ContractOption.astro'
-import ContractQuery from '@/icons/ContractQuery.astro'
-
 import Evaluation from '@/components/evaluacion/Index'
 ---
 
 <Layout
   titlePage='Plataforma de Monitoreo | ESTADO ABIERTO ECUADOR'
   descriptionPage=''
-  currentUrl='evaluacion'>
+  currentUrl='evaluacion'
+  isWhiteBg={true}>
   <Evaluation client:load />
 </Layout>
