@@ -1,0 +1,52 @@
+---
+import RocketData from '@/icons/RocketData.astro'
+
+const howToEvaluate = [
+  {
+    title: 'Propósito',
+    description:
+      'Esta sección evalúa en qué medida los datos se están considerando como un elemento integral para la elaboración de estrategias, la toma de decisiones y los procesos en la institución.',
+    image: '/images/evaluate-purpose.svg'
+  },
+  {
+    title: 'Práctica',
+    description:
+      'Esta sección evalúa en qué medida los datos se usan, aprovechan y comparten a la interna y externa de la institución.',
+    image: '/images/evaluate-practice.svg'
+  },
+  {
+    title: 'Personal',
+    description:
+      'Esta sección evalúa en qué medida los servidores públicos de la institución cuentan con las habilidades y capacidades para usar y aprovechar los datos que recopilan o utilizan.',
+    image: '/images/evaluate-personal.svg'
+  }
+]
+---
+
+<section class='bg-zinc-100 py-32'>
+  <div class='section-container mx-auto'>
+    <div class='relative w-full text-center lg:w-2/4 lg:text-left'>
+      <h2
+        class='mx-auto mb-8 max-w-max text-4xl font-bold leading-[3.25rem] text-zinc-900 lg:mx-0 lg:max-w-md'>
+        Evualuación basada en 3 pilares fundamentales
+      </h2>
+    </div>
+
+    <section
+      class='flex flex-wrap items-center justify-center gap-4 md:flex-wrap lg:flex-row lg:flex-nowrap lg:justify-between'>
+      {
+        howToEvaluate.map(how => (
+          <article class='group relative w-full rounded bg-accent p-4 hover:bg-primary md:h-64'>
+            <div class='absolute bottom-0 right-0 mb-4 flex h-20 w-20 items-center justify-center rounded bg-accent/40 p-1' />
+            <h4 class='my-4 text-3xl font-semibold capitalize text-white transition-colors group-hover:text-primary'>
+              {how.title}
+            </h4>
+            <p class='hidden font-medium leading-5 text-white transition-all group-hover:block'>
+              {how.description}
+            </p>
+          </article>
+        ))
+      }
+    </section>
+  </div>
+</section>

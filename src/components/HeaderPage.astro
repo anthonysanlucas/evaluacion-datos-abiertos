@@ -1,3 +1,23 @@
+---
+const navLinks = [
+  {
+    id: 'articulos',
+    name: 'Artículos',
+    url: '/acerca-de'
+  },
+  {
+    id: 'evaluacion',
+    name: 'Evaluación',
+    url: '/evaluacion'
+  },
+  {
+    id: 'acerca-de',
+    name: 'Acerca de',
+    url: '/acerca-de'
+  }
+]
+---
+
 <header class='sticky top-0 z-50 bg-accent backdrop-blur-3xl'>
   <nav class='section-container border-gray-200 py-2'>
     <div class='mx-auto flex flex-wrap items-center justify-between'>
@@ -28,29 +48,21 @@
       <div class='hidden w-full md:block md:w-auto' id='navbar-default'>
         <ul
           class='mt-4 flex flex-col rounded border border-gray-100 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 md:px-4 md:py-3 rtl:space-x-reverse'>
-          <li>
-            <a
-              href='/acerca-de'
-              class='group relative w-max cursor-pointer p-4 pb-1 font-semibold text-zinc-300'>
-              <span>Acerca de</span>
-              <span
-                id='acerca-de'
-                class='absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full'>
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href='/evaluacion'
-              class='group relative w-max cursor-pointer p-4 pb-1 font-semibold text-zinc-300'>
-              <span>Evaluación</span>
-              <span
-                id='evaluacion'
-                class='absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full'>
-              </span>
-            </a>
-          </li>
+          {
+            navLinks.map(link => (
+              <li>
+                <a
+                  href={link.url}
+                  class='group relative w-max cursor-pointer p-4 pb-1 font-semibold text-zinc-300'>
+                  <span>{link.name}</span>
+                  <span
+                    id={link.id}
+                    class='absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full'
+                  />
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
@@ -59,10 +71,15 @@
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
+    const articleLinkActive = document.getElementById('articulos')
     const evaluationLinkActive = document.getElementById('evaluacion')
     const aboutLinkActive = document.getElementById('acerca-de')
 
     const pathName = window.location.pathname
+
+    if (pathName === '/articulos') {
+      articleLinkActive.style.width = '100%'
+    }
 
     if (pathName === '/evaluacion') {
       evaluationLinkActive.style.width = '100%'

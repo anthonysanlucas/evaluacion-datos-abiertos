@@ -1,0 +1,72 @@
+---
+import RocketData from '@/icons/RocketData.astro'
+---
+
+<div class='wave-container min-h-[calc(100vh-64px)]'>
+  <section
+    class='section-container grid size-full place-content-center place-items-center gap-16 md:grid-cols-2'>
+    <article>
+      <h1 class='mb-4 text-balance text-3xl font-bold leading-tight text-white md:text-[40px]'>
+        TU VIAJE EN EL MUNDO DE LOS DATOS EMPIEZA AQUÍ
+      </h1>
+      <p class='mb-8 font-medium text-zinc-200'>
+        La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social (SIO)
+        una visión instantánea de su recorrido actual hacia la madurez de los datos, así como
+        herramientas y recursos relevantes para seguir adelante. Utilice los resultados para
+        identificar formas de fortalecer su práctica y compártalas para comunicar áreas de
+        oportunidad.
+      </p>
+
+      <div class='grid max-w-max gap-4'>
+        <a
+          href='/evaluacion'
+          class='group flex h-12 animate-background-shine select-none items-center justify-center gap-2 rounded border border-primary bg-[linear-gradient(110deg,#071E2D,45%,#10BCD0,55%,#071E2D)] bg-[length:200%_100%] px-6 font-semibold text-white transition-colors focus:outline-none'>
+          <span>Empezar evaluación</span>
+
+          <svg
+            class='h-4 w-4 transition-transform ease-in-out group-hover:translate-x-2'
+            width='15'
+            height='15'
+            viewBox='0 0 15 15'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-5 w-5'
+            ><path
+              d='M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z'
+              fill='currentColor'
+              fill-rule='evenodd'
+              clip-rule='evenodd'></path>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <RocketData className='ml-auto hidden h-auto w-full max-w-md md:block' />
+  </section>
+</div>
+
+<style>
+  .wave-container {
+    height: 40vh;
+    position: relative;
+  }
+
+  .wave-container::before {
+    content: '';
+    width: 100%;
+    height: 71px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 36vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 101' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 4 51.5 7C104.5 14 200 32 300 50C400 67 500 84 600 77C700 70 800 40 900 23C987.526 4 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V101H1150C1100 101 1000 101 900 101C800 101 700 101 600 101C500 101 400 101 300 101C200 101 100 101 50 101H0V1.98128Z' fill='%23ffffff'/></svg>");
+  }
+
+  @media (max-width: 850px) {
+    .wave-container::before {
+      height: 35.5px;
+    }
+  }
+</style>
