@@ -3,19 +3,19 @@ import { Toaster } from 'react-hot-toast'
 import EvaluationFooterPageInfo from './components/EvaluationFooterPage'
 import { EvaluationHeaderPage } from './components/EvaluationHeaderPage'
 import { useQuestionStore } from '@/components/evaluacion/stores/questionStore'
-import Question from './components/Question'
+import Question from './components/Questions'
 
 export function Evaluation() {
   const currentSection = useQuestionStore(state => state.currentSection)
   const isCompleted = useQuestionStore(state => state.isCompletedEvaluation)
 
   return (
-    <section className="section-container flex min-h-screen w-full items-center justify-center py-8">
+    <section className="section-container flex min-h-screen w-full items-center justify-center rounded py-8 md:px-8">
       {!isCompleted && (
-        <div className="mx-auto w-full max-w-3xl">
+        <div className="mx-auto w-full max-w-3xl bg-zinc-100 pb-8">
           <EvaluationHeaderPage />
 
-          <section className="space-y-4">
+          <section className="space-y-8 px-4 py-8">
             {currentSection === 0 && <EntityInfo />}
             {currentSection > 0 && <Question />}
           </section>

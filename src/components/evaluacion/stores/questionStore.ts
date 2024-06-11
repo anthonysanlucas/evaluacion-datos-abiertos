@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { questionsData } from '@/data/questionData'
 
 export const useQuestionStore = create<QuestionStore>(set => ({
-  currentSection: 0,
+  currentSection: 1,
   currentQuestion: 0,
 
   questionsData: questionsData,
@@ -12,6 +12,18 @@ export const useQuestionStore = create<QuestionStore>(set => ({
   isCompletedEvaluation: false,
 
   setCurrentSection: (section: number) => set({ currentSection: section }),
+
+  setQuestionPoint (questionId: string, points: number) {
+    set(state => {
+      const questionIndex = state.questionsData[state.currentSection].questions.findIndex(
+        (question: Question) => question.id === questionId
+      )
+    
+      state.questionsData[state.currentSection].questions[questionIndex].questionPoints = points
+    
+      return state;
+    })
+  },
 
   // Move to the next section if the current section is not the last one
   nextSection: () =>

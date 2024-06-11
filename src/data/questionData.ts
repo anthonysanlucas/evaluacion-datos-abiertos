@@ -9,38 +9,26 @@ export const questionsData: QuestionsData = [
   },
   {
     section: 2,
-    sectionTitle: 'El Objetivo',
+    sectionTitle: 'Propósito',
     sectionDescription:
-      'El objetivo de esta sección es evaluar la capacidad de su institución para establecer metas y objetivos claros y medibles.',
+      'Esta sección evalúa en qué medida los datos se están considerando como un elemento integral para la elaboración de estrategias, la toma de decisiones y los procesos en la institución.',
     sectionPoints: 0,
     questions: [
       {
         id: '002001',
         question:
-          '¿Utiliza su institución datos para la estrategia organizacional y definir metas?',
+          'En tu institución, ¿tienen claramente identificados los datos que recopilan de forma directa en todas las áreas o direcciones para crear informes y/o tomar decisiones?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
-            value: 2
-          },
-          {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
+            text: 'Sí, en todas las áreas o direcciones',
             value: 4
           },
           {
-            text: 'No estoy seguro',
+            text: 'Solo en algunas áreas o direcciones',
+            value: 2
+          },
+          {
+            text: 'Regularmente',
             value: 0
           }
         ],
@@ -50,30 +38,14 @@ export const questionsData: QuestionsData = [
       {
         id: '002002',
         question:
-          '¿Utiliza su institución datos para tomar decisiones financieras y de contratación?',
+          '¿Utilizan además datos de fuentes externas para crear informes y/o tomar decisiones?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -83,30 +55,14 @@ export const questionsData: QuestionsData = [
       {
         id: '002003',
         question:
-          '¿Utiliza su institución datos para tomar decisiones financieras y de contratación?',
+          '¿Tienen claramente establecido el proceso que cada área debe seguir para recopilar y compartir datos con otras áreas o direcciones?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -116,30 +72,14 @@ export const questionsData: QuestionsData = [
       {
         id: '002004',
         question:
-          '¿Utiliza su institución los datos para realizar cambios en la dirección organizacional?',
+          '¿Tienen definida una política de uso, compartición y publicación de los datos que recopilan?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -148,31 +88,14 @@ export const questionsData: QuestionsData = [
       },
       {
         id: '002005',
-        question:
-          '¿Utiliza su institución los datos para medir la efectividad de sus operaciones y servicios?',
+        question: '¿Tienen definida una política de gobernanza de datos en la institución?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -182,30 +105,14 @@ export const questionsData: QuestionsData = [
       {
         id: '002006',
         question:
-          '¿Utiliza su institución los datos para comprender mejor sus programas y servicios?',
+          '¿Cuentan con criterios definidos para la protección y uso de los datos personales que recopilan?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -214,64 +121,43 @@ export const questionsData: QuestionsData = [
       },
       {
         id: '002007',
-        question:
-          '¿Utiliza su institución los datos para comprender a los ciudadanos y comunidades?',
+        question: '¿Cuáles son los principales usos que le dan a los datos que recopilan? ',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
+            text: 'Crear la planificación anual de actividades',
             value: 1
           },
           {
-            text: 'Regularmente',
-            value: 2
+            text: 'Entender mejor las necesidades de la ciudadanía',
+            value: 1
           },
           {
-            text: 'Frecuentemente',
-            value: 3
+            text: 'Informar a la ciudadanía de los programas y proyectos que implementan',
+            value: 1
           },
           {
-            text: 'Siempre',
-            value: 4
+            text: 'Medir el impacto de los programas y proyectos que se implementan',
+            value: 1
           },
           {
-            text: 'No estoy seguro',
-            value: 0
+            text: 'Otros',
+            value: 1
           }
         ],
-        type: 'radio',
+        type: 'checkbox',
         questionPoints: null
       },
       {
         id: '002008',
         question:
-          '¿Utiliza su institución los datos para identificar problemas específicos que enfrentan los ciudadanos y las comunidades?',
+          '¿Cuentan con procedimientos técnicos definidos para validar y mejorar la calidad de datos que usan, recopilan y/o publican?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -281,30 +167,14 @@ export const questionsData: QuestionsData = [
       {
         id: '002009',
         question:
-          '¿Utiliza su institución los datos para la implementación y mejora de programas y servicios?',
+          '¿Cuentan con procedimientos definidos para identificar las necesidades de datos desde otras instituciones o ciudadanía?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -313,31 +183,26 @@ export const questionsData: QuestionsData = [
       },
       {
         id: '002010',
-        question:
-          '¿Utiliza su institución los datos para medir el impacto y la eficacia de sus programas y servicios?',
+        question: ' ¿Con qué frecuencia realizan esta identificación de necesidades de datos?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
-            value: 2
-          },
-          {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
+            text: 'Semanal',
             value: 4
           },
           {
-            text: 'No estoy seguro',
+            text: 'Mensual',
+            value: 3
+          },
+          {
+            text: 'Semestral',
+            value: 2
+          },
+          {
+            text: 'Anual',
+            value: 1
+          },
+          {
+            text: 'No se ha realizado hasta el momento',
             value: 0
           }
         ],
@@ -347,30 +212,18 @@ export const questionsData: QuestionsData = [
       {
         id: '002011',
         question:
-          '¿Utiliza su institución los datos para medir la calidad y el rendimiento de los servicios públicos?',
+          '¿Cuentan con una definición clara de qué son los datos abiertos y por qué son importantes?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
-            value: 2
-          },
-          {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
+            text: 'Sí, se conoce en todas las áreas o direcciones',
             value: 4
           },
           {
-            text: 'No estoy seguro',
+            text: 'Existe pero no se difunde',
+            value: 2
+          },
+          {
+            text: 'No se cuenta con una definición',
             value: 0
           }
         ],
@@ -380,119 +233,18 @@ export const questionsData: QuestionsData = [
       {
         id: '002012',
         question:
-          '¿Utiliza su institución los datos para mejorar la eficiencia y la gestión interna?',
+          ' ¿Existen políticas o iniciativas que promuevan la cultura de datos abiertos dentro de su institución?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
-            value: 2
-          },
-          {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
+            text: 'Sí',
             value: 4
           },
           {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
         type: 'radio',
-        questionPoints: null
-      },
-      {
-        id: '002013',
-        question:
-          '¿A qué nivel de automatización analiza e informa su institución sobre sus datos?',
-        options: [
-          {
-            text: 'Manual',
-            value: 0
-          },
-          {
-            text: 'Parcialmente automatizado',
-            value: 2
-          },
-          {
-            text: 'Totalmente automatizado',
-            value: 4
-          },
-          {
-            text: 'Ninguna de estas opciones aplica',
-            value: 0
-          },
-          {
-            text: 'No estoy seguro',
-            value: 0
-          }
-        ],
-        type: 'radio',
-        questionPoints: null
-      },
-      {
-        id: '002014',
-        question: '¿Cuáles son algunos ejemplos de fuentes de datos utilizadas por su institución?',
-        options: [
-          {
-            text: 'Ejemplos de fuentes de datos incluyen registros de ciudadanos',
-            value: 1
-          },
-          {
-            text: 'Bases de datos de servicios públicos',
-            value: 1
-          },
-          {
-            text: 'Encuestas comunitarias',
-            value: 1
-          },
-          {
-            text: 'Registros de empleo municipal',
-            value: 1
-          },
-          {
-            text: 'Datos de transporte público',
-            value: 1
-          }
-        ],
-        type: 'checkbox',
-        questionPoints: null
-      },
-      {
-        id: '002015',
-        question: '¿Con qué propósito analiza e informa su institución sobre sus datos?',
-        options: [
-          {
-            text: 'Analizamos datos para entender lo que sucedió en el pasado',
-            value: 1
-          },
-          {
-            text: 'Analizamos datos para diagnosticar por qué sucedió algo',
-            value: 1
-          },
-          {
-            text: 'Encuestas comunitarias',
-            value: 1
-          },
-          {
-            text: 'Registros de empleo municipal',
-            value: 1
-          },
-          {
-            text: 'Datos de transporte público',
-            value: 1
-          }
-        ],
-        type: 'checkbox',
         questionPoints: null
       }
     ]
@@ -608,15 +360,15 @@ export const questionsData: QuestionsData = [
         question: '¿Cómo gestiona su institución la calidad de los datos?',
         options: [
           {
-            text: 'Identificamos y eliminamos cualquier discrepancia en nuestros datos.',
+            text: 'Identificamos y eliminamos cualquier discrepancia en nuestros datos',
             value: 1
           },
           {
-            text: 'Empleamos procesos para mantener nuestros datos actualizados.',
+            text: 'Empleamos procesos para mantener nuestros datos actualizados',
             value: 1
           },
           {
-            text: 'Mantenemos un registro de los activos de datos y quién es responsable de ellos.',
+            text: 'Mantenemos un registro de los activos de datos y quién es responsable de ellos',
             value: 1
           },
           {
@@ -637,27 +389,27 @@ export const questionsData: QuestionsData = [
           '¿Qué políticas y prácticas utiliza su institución para mantener seguros sus datos?',
         options: [
           {
-            text: 'Restringimos el acceso a datos sensibles y personales.',
+            text: 'Restringimos el acceso a datos sensibles y personales',
             value: 1
           },
           {
-            text: 'Eliminamos datos que ya no son necesarios.',
+            text: 'Eliminamos datos que ya no son necesarios',
             value: 1
           },
           {
-            text: 'Monitoreamos continuamente la seguridad de nuestros datos.',
+            text: 'Monitoreamos continuamente la seguridad de nuestros datos',
             value: 1
           },
           {
-            text: 'Probamos continuamente la seguridad de nuestros datos.',
+            text: 'Probamos continuamente la seguridad de nuestros datos',
             value: 1
           },
           {
-            text: 'Ninguna de estas opciones aplica.',
+            text: 'Ninguna de estas opciones aplica',
             value: 0
           },
           {
-            text: 'No estoy seguro.',
+            text: 'No estoy seguro',
             value: 0
           }
         ],

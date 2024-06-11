@@ -33,6 +33,7 @@ interface QuestionStore {
 
   nextSection: () => void
   nextQuestion: () => void
+  setQuestionPoint: (questionId: string, points: number) => void
 }
 
 interface Entity {

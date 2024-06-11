@@ -1,22 +1,20 @@
 import { showToastService } from '../services/showToastService'
 import { useQuestionStore } from '@/components/evaluacion/stores/questionStore'
 import { useEntityStore } from '../stores/entityStore'
-import { questionsData } from '@/data/questionData'
 import { RocketIcon } from '@/icons/Icons'
 
 export function EvaluationFooterPageInfo() {
   const currentSection = useQuestionStore(state => state.currentSection)
-  const currentQuestion = useQuestionStore(state => state.currentQuestion)
   const nextSection = useQuestionStore(state => state.nextSection)
   const nextQuestion = useQuestionStore(state => state.nextQuestion)
+  const questionsData = useQuestionStore(state => state.questionsData)
 
   const institutionName = useEntityStore(state => state.institutionName)
   const iinstitutionType = useEntityStore(state => state.institutionType)
   const contactEmail = useEntityStore(state => state.contactEmail)
   const responsiblePersonName = useEntityStore(state => state.responsiblePersonName)
+  const responsiblePersonLastName = useEntityStore(state => state.responsiblePersonLastName)
   const responsiblePersonRole = useEntityStore(state => state.responsiblePersonRole)
-  const populationServed = useEntityStore(state => state.populationServed)
-  const participationObjective = useEntityStore(state => state.participationObjective)
 
   const maxQuestionsPerSection = questionsData[currentSection].questions.length
 
@@ -42,25 +40,50 @@ export function EvaluationFooterPageInfo() {
       return showToastService('Debes ingresar el nombre de la persona responsable.')
     }
 
+    if (responsiblePersonLastName === '') {
+      return showToastService('Debes ingresar el apellido de la persona responsable.')
+    }
+
     if (responsiblePersonRole === '') {
       return showToastService('Debes ingresar el rol de la persona responsable.')
-    }
-
-    if (populationServed === null) {
-      return showToastService('Debes ingresar la población a la que sirve tu institución.')
-    }
-
-    if (participationObjective === '') {
-      return showToastService('Debes ingresar el objetivo de participación.')
     }
 
     nextSection()
   }
 
-  const handleNextQuestionOrSection = () => {
-    // validate if the question is answered
+  // const handleNextSection = () => {
+  //   const questions = questionsData[currentSection].questions
 
-    nextQuestion()
+  //   const whatQuestionIsNotAnswered = questions.findIndex(
+  //     (question: Question) => question.questionPoints === null
+  //   )
+
+  //   if (whatQuestionIsNotAnswered !== -1) {
+  //     return showToastService(
+  //       `Debes responder la pregunta <span>${whatQuestionIsNotAnswered + 1}</span> antes de continuar.`
+  //     )
+  //   }
+
+  //   nextSection()
+  // }
+
+  const handleNextSection = () => {
+    const questions = questionsData[currentSection].questions
+
+    const unansweredQuestions = questions.reduce((acc, question, index) => {
+      if (question.questionPoints === null) {
+        acc.push(index + 1) // Agregar 1 para que los índices sean 1-based como en la interfaz de usuario
+      }
+      return acc
+    }, [])
+
+    if (unansweredQuestions.length > 0) {
+      return showToastService(
+        `Debes responder las preguntas: ${unansweredQuestions.join(', ')}. Antes de continuar.`
+      )
+    }
+
+    nextSection()
   }
 
   return (
@@ -68,16 +91,16 @@ export function EvaluationFooterPageInfo() {
       {currentSection === 0 && (
         <button
           onClick={handleStartEvaluation}
-          className="bg-accent flex h-12 w-full items-center justify-center gap-4 rounded-md border border-primary px-6 font-semibold text-zinc-200 transition-colors hover:bg-white hover:text-primary focus:outline-none">
-          <span>Iniciar el viaje</span>
+          className="flex h-12 w-full items-center justify-center gap-4 rounded-md border border-transparent bg-accent px-6 font-semibold text-zinc-200 transition-colors hover:border-primary hover:bg-white hover:text-primary focus:outline-none">
+          <span>Siguiente</span>
 
           <RocketIcon className="h-6 w-6" />
         </button>
       )}
       {currentSection > 0 && (
         <button
-          onClick={handleNextQuestionOrSection}
-          className="bg-accent h-12 w-full items-center justify-center gap-2 rounded-md border border-zinc-800 px-6 font-semibold text-zinc-200 transition-colors hover:bg-white focus:outline-none">
+          onClick={handleNextSection}
+          className="h-12 w-full items-center justify-center gap-2 rounded-md border border-zinc-800 bg-accent px-6 font-semibold text-zinc-200 transition-colors hover:bg-white focus:outline-none">
           Siguiente
         </button>
       )}
