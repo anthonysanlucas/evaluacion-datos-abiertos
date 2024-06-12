@@ -7,10 +7,10 @@ import HeroData from '@/icons/HeroData.astro'
     class='section-container relative grid size-full place-content-center place-items-center gap-16 lg:grid-cols-2'>
     <article>
       <h1
-        class='mb-4 text-balance text-3xl font-bold leading-tight text-primary-text md:text-[40px]'>
+        class='text-primary-text mb-4 text-balance text-3xl font-bold leading-tight md:text-[40px]'>
         TU VIAJE EN EL MUNDO DE LOS DATOS EMPIEZA AQUÍ
       </h1>
-      <p class='mb-8 font-medium text-secondary-text'>
+      <p class='text-secondary-text mb-8 font-medium'>
         La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social (SIO)
         una visión instantánea de su recorrido actual hacia la madurez de los datos, así como
         herramientas y recursos relevantes para seguir adelante. Utilice los resultados para
@@ -45,7 +45,11 @@ import HeroData from '@/icons/HeroData.astro'
       </div>
     </article>
 
-    <HeroData className='absolute bottom-4 right-6 -z-10 hidden h-auto w-full max-w-lg lg:block' />
+    <img
+      src='/images/hero-data.png'
+      alt='Ilustración de una persona trabajando en una computadora'
+      class='hidden h-auto w-full max-w-3xl lg:block'
+    />
   </section>
 </div>
 
