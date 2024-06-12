@@ -1,0 +1,72 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import BenefitsSection from '@/components/home/BenefitsSection.astro'
+import BlogPostsSection from '@/components/home/BlogPostsSection.astro'
+import HeroSection from '@/components/home/HeroSection.astro'
+import HowToEvaluate from '@/components/home/HowToEvaluateSection.astro'
+---
+
+<Layout titlePage='Kit de Datos Abiertos' descriptionPage='' currentUrl='' isWhiteBg={true}>
+  <section class='bg-blue-accent border-b'>
+    <div class='section-container py-16'>
+      <p class='section-subtitle text-white'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam,
+        voluptates.
+      </p>
+    </div>
+  </section>
+
+  <section class='section-container'>
+    <article
+      class='grid grid-cols-[1fr,max-content] place-content-center place-items-center gap-8 border-b py-8'>
+      <div>
+        <h2 class='section-title mb-8'>Explorando los datos abiertos</h2>
+        <p class='section-subtitle mb-8'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, aperiam sequi! Veniam vel
+          vero odit quasi, quisquam eaque ea? Excepturi ad cum magnam saepe possimus provident animi
+          est dicta non.
+        </p>
+
+        <footer class='text-secondary-text font-medium'>
+          <span>Explorador</span>
+          <span> | </span>
+          <span>4 minutos</span>
+          <span> | </span>
+          <span>12 de Julio, 2024</span>
+        </footer>
+      </div>
+
+      <img
+        class='w-full max-w-xs rounded-xl'
+        src='/images/resources/introduction-post.png'
+        alt=''
+      />
+    </article>
+
+    <article
+      class='grid grid-cols-[1fr,max-content] place-content-center place-items-center gap-8 border-b py-8'>
+      <div>
+        <h2 class='section-title mb-8'>Explorando los datos abiertos</h2>
+        <p class='section-subtitle mb-8'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, aperiam sequi! Veniam vel
+          vero odit quasi, quisquam eaque ea? Excepturi ad cum magnam saepe possimus provident animi
+          est dicta non.
+        </p>
+
+        <footer class='text-secondary-text font-medium'>
+          <span>Explorador</span>
+          <span> | </span>
+          <span>4 minutos</span>
+          <span> | </span>
+          <span>12 de Julio, 2024</span>
+        </footer>
+      </div>
+
+      <img
+        class='w-full max-w-xs rounded-xl'
+        src='/images/resources/introduction-post.png'
+        alt=''
+      />
+    </article>
+  </section>
+</Layout>

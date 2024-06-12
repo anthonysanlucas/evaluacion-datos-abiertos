@@ -1,28 +1,23 @@
 ---
 const navLinks = [
   {
-    id: 'articulos',
-    name: 'Artículos',
-    url: '/acerca-de'
+    id: 'recursos',
+    name: 'Recursos',
+    url: '/recursos'
   },
   {
     id: 'evaluacion',
     name: 'Evaluación',
     url: '/evaluacion'
-  },
-  {
-    id: 'acerca-de',
-    name: 'Acerca de',
-    url: '/acerca-de'
   }
 ]
 ---
 
-<header class='sticky top-0 z-50 backdrop-blur-xl'>
+<header class='sticky top-0 z-50 border-b backdrop-blur-xl'>
   <nav class='section-container border-gray-200 py-2'>
     <div class='mx-auto flex flex-wrap items-center justify-between'>
       <a href='/' class='text-primary-text flex items-center space-x-3 rtl:space-x-reverse'>
-        <img class='max-w-48' src='/images/logo-kit-de-datos.png' alt='' />
+        <img class='max-w-60' src='/images/logo-kit-de-datos.png' alt='' />
       </a>
       <button
         data-collapse-toggle='navbar-default'
@@ -53,7 +48,7 @@ const navLinks = [
               <li>
                 <a
                   href={link.url}
-                  class='font- text-primary-text group relative w-max cursor-pointer p-4 pb-1'>
+                  class='text-primary-tex group relative w-max cursor-pointer p-4 pb-1 font-medium'>
                   <span>{link.name}</span>
                   <span
                     id={link.id}
@@ -71,22 +66,17 @@ const navLinks = [
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
-    const articleLinkActive = document.getElementById('articulos')
+    const resourcesLinkActive = document.getElementById('recursos')
     const evaluationLinkActive = document.getElementById('evaluacion')
-    const aboutLinkActive = document.getElementById('acerca-de')
 
     const pathName = window.location.pathname
 
-    if (pathName === '/articulos') {
-      articleLinkActive.style.width = '100%'
+    if (pathName === '/recursos') {
+      resourcesLinkActive.style.width = '100%'
     }
 
     if (pathName === '/evaluacion') {
       evaluationLinkActive.style.width = '100%'
-    }
-
-    if (pathName === '/acerca-de') {
-      aboutLinkActive.style.width = '100%'
     }
   })
 </script>

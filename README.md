@@ -52,3 +52,17 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+https://beta.comprasabiertas.org/
+
+https://ia.comprasabiertas.org/
+
+https://blog-component-11.webflow.io/
+
+https://column-template-copy.webflow.io/blogs/designers-who-changed-the-web
+
+https://docs.google.com/document/d/1HTxzqAjV4vnvfDyAM3fK34LycYvvtg8vh8jXN-sDc3E/edit
+
+https://docs.google.com/document/d/1Y-gg55w7ZLD1kY0HCzZh9nx51qGFBC5Y/edit
+
+https://www.figma.com/design/JSOTBHMqIUfzpgppw4nYlB/Lucid-Illustrations-(Community)?node-id=178-3582&t=5MkSoVr67rw9eO4Y-0

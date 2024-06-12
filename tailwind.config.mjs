@@ -11,15 +11,15 @@ export default {
         'primary-text': '#001B2E',
         'secondary-text': '#4C5F6C',
         'custom-orange': '#EF8E7D',
-        'custom-yellow': '#F8D45C'
+        'custom-yellow': '#F8D45C',
+        'blue-accent': '#0c2b4a'
       },
       fontFamily: {
         sans: ['Lato', 'sans-serif']
       },
       animation: {
         'background-shine': 'background-shine 2s linear infinite',
-        'border-width': 'border-width 3s infinite alternate',
-        float: 'float 3s ease-in-out infinite'
+        'border-width': 'border-width 3s infinite alternate'
       },
       keyframes: {
         'background-shine': {
@@ -39,11 +39,6 @@ export default {
             width: '100px',
             opacity: '1'
           }
-        },
-        float: {
-          '0%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-          '100%': { transform: 'translateY(0)' }
         }
       }
     }
