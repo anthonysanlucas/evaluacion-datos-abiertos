@@ -16,8 +16,8 @@ export function Evaluation() {
 
   return (
     <>
-      <section className="relative flex min-h-screen w-full items-center justify-center">
-        {!isCompletedEvaluation && (
+      {!isCompletedEvaluation && (
+        <section className="relative flex min-h-screen w-full items-center justify-center">
           <div className="mx-auto w-full pb-8">
             <EvaluationHeaderPage />
 
@@ -28,11 +28,11 @@ export function Evaluation() {
 
             <EvaluationFooterPageInfo />
           </div>
-        )}
+          <Toaster />
+        </section>
+      )}
 
-        {isCompletedEvaluation && <EvaluationResults />}
-        <Toaster />
-      </section>
+      {isCompletedEvaluation && <EvaluationResults />}
 
       {isCalculating && <PageLoader />}
     </>
