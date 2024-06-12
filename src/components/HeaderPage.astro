@@ -21,8 +21,8 @@ const navLinks = [
 <header class='sticky top-0 z-50 backdrop-blur-xl'>
   <nav class='section-container border-gray-200 py-2'>
     <div class='mx-auto flex flex-wrap items-center justify-between'>
-      <a href='/' class='flex items-center space-x-3 text-primary-text rtl:space-x-reverse'>
-        <span class='self-center whitespace-nowrap text-2xl font-semibold'>PLATAFORMA (LOGO)</span>
+      <a href='/' class='text-primary-text flex items-center space-x-3 rtl:space-x-reverse'>
+        <img class='max-w-48' src='/images/logo-kit-de-datos.png' alt='' />
       </a>
       <button
         data-collapse-toggle='navbar-default'
@@ -53,7 +53,7 @@ const navLinks = [
               <li>
                 <a
                   href={link.url}
-                  class='font- group relative w-max cursor-pointer p-4 pb-1 text-primary-text'>
+                  class='font- text-primary-text group relative w-max cursor-pointer p-4 pb-1'>
                   <span>{link.name}</span>
                   <span
                     id={link.id}
