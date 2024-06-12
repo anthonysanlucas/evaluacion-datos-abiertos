@@ -5,57 +5,40 @@ function Question() {
   const currentSection = useQuestionStore(state => state.currentSection)
   const questionsData = useQuestionStore(state => state.questionsData)
   const setQuestionPoint = useQuestionStore(state => state.setQuestionPoint)
-  const [answerIndex, setAnswerIndex] = useState<number | null>(null)
-  const [points, setPoints] = useState(0)
+  const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: number[] }>({})
 
   const questions = questionsData[currentSection].questions
 
   const handleRadioAnswer = (questionId: string, optionValue: number) => {
     console.log('RADIO', questionId, optionValue, 'INDEX')
-
     setQuestionPoint(questionId, optionValue)
   }
 
   const handleCheckboxAnswer = (questionId: string, optionValue: number, optionIndex: number) => {
-    // La validacion deberia ser si el valor de la respuesta es igual al valor de una de las opciones seleccionadas por lo que points deberia ser un array
+    setSelectedOptions(prevSelectedOptions => {
+      const newSelectedOptions = { ...prevSelectedOptions }
+      if (!newSelectedOptions[questionId]) {
+        newSelectedOptions[questionId] = []
+      }
 
-    if (answerIndex == null) {
-      console.log('IS NULL')
+      if (newSelectedOptions[questionId].includes(optionIndex)) {
+        newSelectedOptions[questionId] = newSelectedOptions[questionId].filter(
+          index => index !== optionIndex
+        )
+      } else {
+        newSelectedOptions[questionId].push(optionIndex)
+      }
 
-      setAnswerIndex(optionIndex)
+      // Calcular los puntos seleccionados
+      const selectedPoints = newSelectedOptions[questionId].reduce((acc, idx) => {
+        return acc + questions.find(q => q.id === questionId).options[idx].value
+      }, 0)
 
-      setPoints(optionValue)
+      setQuestionPoint(questionId, selectedPoints)
 
-      setQuestionPoint(questionId, points)
-
-      return
-    }
-
-    if (answerIndex === optionIndex) {
-      console.log('IS EQUAL')
-
-      setAnswerIndex(null)
-
-      setPoints(0)
-
-      setQuestionPoint(questionId, points)
-
-      return
-    }
-
-    if (answerIndex !== optionIndex) {
-      console.log('IS NOT EQUAL')
-
-      setAnswerIndex(optionIndex)
-
-      setPoints(points + optionValue)
-
-      setQuestionPoint(questionId, points)
-
-      return
-    }
-
-    console.log('CHECKBOX', questionId, optionValue, 'INDEX', optionIndex)
+      console.log('CHECKBOX', questionId, optionValue, optionIndex, newSelectedOptions)
+      return newSelectedOptions
+    })
   }
 
   return (
@@ -72,6 +55,8 @@ function Question() {
 
             <ul>
               {question.options.map((option, optionIndex) => {
+                const isChecked =
+                  selectedOptions[question.id] && selectedOptions[question.id].includes(optionIndex)
                 return (
                   <li key={question.id + optionIndex + 'option'} className="rounded">
                     <label className="grid cursor-pointer grid-cols-[max-content,1fr] place-content-start place-items-start gap-4 border bg-transparent p-4 hover:bg-zinc-800">
@@ -79,11 +64,13 @@ function Question() {
                         type={question.type}
                         value={option.value}
                         name={question.id}
+                        checked={isChecked}
                         onChange={() => {
-                          question.type === 'radio' && handleRadioAnswer(question.id, option.value)
-
-                          question.type === 'checkbox' &&
+                          if (question.type === 'radio') {
+                            handleRadioAnswer(question.id, option.value)
+                          } else if (question.type === 'checkbox') {
                             handleCheckboxAnswer(question.id, option.value, optionIndex)
+                          }
                         }}
                         className="h-6 w-6 border-gray-600 bg-gray-700 accent-red-500 focus:outline-dashed"
                       />

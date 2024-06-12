@@ -29,8 +29,6 @@ interface QuestionStore {
 
   maxSections: number
 
-  isCompletedEvaluation: boolean
-
   nextSection: () => void
   nextQuestion: () => void
   setQuestionPoint: (questionId: string, points: number) => void

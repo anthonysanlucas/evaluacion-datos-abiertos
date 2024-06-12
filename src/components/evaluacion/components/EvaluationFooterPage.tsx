@@ -2,12 +2,16 @@ import { showToastService } from '../services/showToastService'
 import { useQuestionStore } from '@/components/evaluacion/stores/questionStore'
 import { useEntityStore } from '../stores/entityStore'
 import { RocketIcon } from '@/icons/Icons'
+import { useFormStateStore } from '../stores/formStateStore'
 
 export function EvaluationFooterPageInfo() {
   const currentSection = useQuestionStore(state => state.currentSection)
-  const nextSection = useQuestionStore(state => state.nextSection)
-  const nextQuestion = useQuestionStore(state => state.nextQuestion)
   const questionsData = useQuestionStore(state => state.questionsData)
+  const maxSections = useQuestionStore(state => state.maxSections)
+  const nextSection = useQuestionStore(state => state.nextSection)
+  const setIsCompletedEvaluation = useFormStateStore(state => state.setIsCompletedEvaluation)
+
+  const setIsCalculating = useFormStateStore(state => state.setIsCalculating)
 
   const institutionName = useEntityStore(state => state.institutionName)
   const iinstitutionType = useEntityStore(state => state.institutionType)
@@ -15,8 +19,6 @@ export function EvaluationFooterPageInfo() {
   const responsiblePersonName = useEntityStore(state => state.responsiblePersonName)
   const responsiblePersonLastName = useEntityStore(state => state.responsiblePersonLastName)
   const responsiblePersonRole = useEntityStore(state => state.responsiblePersonRole)
-
-  const maxQuestionsPerSection = questionsData[currentSection].questions.length
 
   const handleStartEvaluation = () => {
     if (institutionName === '') {
@@ -79,8 +81,21 @@ export function EvaluationFooterPageInfo() {
 
     if (unansweredQuestions.length > 0) {
       return showToastService(
-        `Debes responder las preguntas: ${unansweredQuestions.join(', ')}. Antes de continuar.`
+        `Debes responder las pregunta${unansweredQuestions.length > 1 ? 's' : ''}: ${unansweredQuestions.join(', ')}. Antes de continuar.`
       )
+    }
+
+    if (currentSection === maxSections - 1) {
+      // Hacer el calculo por section y asignar los puntos a cada propiedad de la sección
+      setIsCalculating(true)
+
+      setTimeout(() => {
+        setIsCalculating(false)
+
+        setIsCompletedEvaluation(true)
+      }, 2000)
+
+      return
     }
 
     nextSection()

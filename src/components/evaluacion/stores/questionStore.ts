@@ -2,26 +2,24 @@ import { create } from 'zustand'
 import { questionsData } from '@/data/questionData'
 
 export const useQuestionStore = create<QuestionStore>(set => ({
-  currentSection: 1,
+  currentSection: 0,
   currentQuestion: 0,
 
   questionsData: questionsData,
 
   maxSections: questionsData.length,
 
-  isCompletedEvaluation: false,
-
   setCurrentSection: (section: number) => set({ currentSection: section }),
 
-  setQuestionPoint (questionId: string, points: number) {
+  setQuestionPoint(questionId: string, points: number) {
     set(state => {
       const questionIndex = state.questionsData[state.currentSection].questions.findIndex(
         (question: Question) => question.id === questionId
       )
-    
+
       state.questionsData[state.currentSection].questions[questionIndex].questionPoints = points
-    
-      return state;
+
+      return state
     })
   },
 

@@ -7,8 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#10BCD0',
-        accent: '#071E2D'
+        primary: '#1458E4',
+        secondary: '#FF5A5F',
+        'text-primary': '#001B2E',
+        'text-secondary': '#4C5F6C',
+        'custom-orange': '#EF8E7D',
+        'custom-yellow': '#F8D45C',
+        accent: '#001b2e'
       },
       fontFamily: {
         sans: ['Raleway', 'sans-serif']

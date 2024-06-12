@@ -108,7 +108,7 @@ export function EntityInfo() {
             className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             placeholder="Escriba sus apellidos"
             value={responsiblePersonLastName}
-            onChange={e => setResponsiblePersonRole(e.target.value)}
+            onChange={e => setResponsiblePersonLastName(e.target.value)}
             required
           />
         </div>

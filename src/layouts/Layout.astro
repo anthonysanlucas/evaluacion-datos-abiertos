@@ -46,14 +46,7 @@ const { titlePage, descriptionPage, currentUrl, isWhiteBg = false } = Astro.prop
       rel='stylesheet'
     />
   </head>
-  <!-- Body bg with black or white mode with class list -->
-
-  <body
-    class:list={[
-      { 'bg-accent': !isWhiteBg },
-      { 'bg-white': isWhiteBg },
-      'relative overflow-x-hidden'
-    ]}>
+  <body class='relative overflow-x-hidden bg-white'>
     <div
       class:list={[
         { hidden: isWhiteBg },
