@@ -9,8 +9,10 @@ export function EvaluationFooterPageInfo() {
   const questionsData = useQuestionStore(state => state.questionsData)
   const maxSections = useQuestionStore(state => state.maxSections)
   const nextSection = useQuestionStore(state => state.nextSection)
-  const setIsCompletedEvaluation = useFormStateStore(state => state.setIsCompletedEvaluation)
+  const setPointsPerSection = useQuestionStore(state => state.setPointsPerSection)
+  const setTotalPoints = useQuestionStore(state => state.setTotalPoints)
 
+  const setIsCompletedEvaluation = useFormStateStore(state => state.setIsCompletedEvaluation)
   const setIsCalculating = useFormStateStore(state => state.setIsCalculating)
 
   const institutionName = useEntityStore(state => state.institutionName)
@@ -53,41 +55,49 @@ export function EvaluationFooterPageInfo() {
     nextSection()
   }
 
-  // const handleNextSection = () => {
-  //   const questions = questionsData[currentSection].questions
-
-  //   const whatQuestionIsNotAnswered = questions.findIndex(
-  //     (question: Question) => question.questionPoints === null
-  //   )
-
-  //   if (whatQuestionIsNotAnswered !== -1) {
-  //     return showToastService(
-  //       `Debes responder la pregunta <span>${whatQuestionIsNotAnswered + 1}</span> antes de continuar.`
-  //     )
-  //   }
-
-  //   nextSection()
-  // }
-
   const handleNextSection = () => {
     const questions = questionsData[currentSection].questions
 
     const unansweredQuestions = questions.reduce((acc, question, index) => {
       if (question.questionPoints === null) {
-        acc.push(index + 1) // Agregar 1 para que los índices sean 1-based como en la interfaz de usuario
+        acc.push(index + 1)
       }
       return acc
     }, [])
 
     if (unansweredQuestions.length > 0) {
       return showToastService(
-        `Debes responder las pregunta${unansweredQuestions.length > 1 ? 's' : ''}: ${unansweredQuestions.join(', ')}. Antes de continuar.`
+        `Debes responder las pregunta${unansweredQuestions.length > 1 ? 's' : ''}: ${unansweredQuestions.join(', ')}.`
       )
     }
 
     if (currentSection === maxSections - 1) {
-      // Hacer el calculo por section y asignar los puntos a cada propiedad de la sección
       setIsCalculating(true)
+
+      let pointsTwo = 0
+      let pointsThree = 0
+      let pointsFour = 0
+
+      questionsData.forEach((section: Section, index: number) => {
+        if (index == 0) return
+
+        section.questions.forEach((question: Question) => {
+          if (index == 1) {
+            pointsTwo += question.questionPoints
+          }
+
+          if (index == 2) {
+            pointsThree += question.questionPoints
+          }
+
+          if (index == 3) {
+            pointsFour += question.questionPoints
+          }
+        })
+
+        setPointsPerSection(index, section.sectionPoints)
+        setTotalPoints(pointsTwo + pointsThree + pointsFour)
+      })
 
       setTimeout(() => {
         setIsCalculating(false)
@@ -102,21 +112,22 @@ export function EvaluationFooterPageInfo() {
   }
 
   return (
-    <footer className="px-4">
+    <footer className="section-container my-8">
       {currentSection === 0 && (
         <button
           onClick={handleStartEvaluation}
-          className="flex h-12 w-full items-center justify-center gap-4 rounded-md border border-transparent bg-accent px-6 font-semibold text-zinc-200 transition-colors hover:border-primary hover:bg-white hover:text-primary focus:outline-none">
+          className="group ml-auto flex h-12 w-60 select-none items-center justify-center gap-2 rounded bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none">
           <span>Siguiente</span>
 
-          <RocketIcon className="h-6 w-6" />
+          <RocketIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-2" />
         </button>
       )}
       {currentSection > 0 && (
         <button
           onClick={handleNextSection}
-          className="h-12 w-full items-center justify-center gap-2 rounded-md border border-zinc-800 bg-accent px-6 font-semibold text-zinc-200 transition-colors hover:bg-white focus:outline-none">
-          Siguiente
+          className="group ml-auto flex h-12 w-60 select-none items-center justify-center gap-2 rounded bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none">
+          <span>{currentSection === maxSections - 1 ? 'Finalizar' : 'Siguiente'}</span>
+          <RocketIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-2" />
         </button>
       )}
     </footer>

@@ -45,35 +45,35 @@
 }
 
 .top-left:before {
-  background: rgb(251, 189, 4);
+  background: #1458e4;
   top: 0;
   left: 0;
   border-radius: 100% 0 0 0;
 }
 
 .top-right:before {
-  background: rgb(234, 67, 52);
+  background: #ef8e7d;
   top: 0;
   right: 0;
   border-radius: 0 100% 0 0;
 }
 
 .bottom-left:before {
-  background: rgb(52, 168, 83);
+  background: #ef8e7d;
   bottom: 0;
   left: 0;
   border-radius: 0 0 0 100%;
 }
 
 .bottom-right:before {
-  background: rgb(67, 135, 244);
+  background: #1458e4;
   bottom: 0;
   right: 0;
   border-radius: 0 0 100% 0;
 }
 
 .container div:after {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.4);
   width: 25px;
   height: 25px;
   z-index: 1;

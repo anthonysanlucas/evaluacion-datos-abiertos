@@ -1,9 +1,9 @@
 export const questionsData: QuestionsData = [
   {
     section: 1,
-    sectionTitle: 'Sobre mi Gobierno Local',
+    sectionTitle: 'Sobre la institución',
     sectionDescription:
-      'Para iniciar el viaje hacia el mundo de los datos necesitamos la siguiente información sobre su institución.',
+      'Por favor, proporciona la siguiente información sobre la institución pública en la que trabajas y para la cual deseas realizar esta evaluación:',
     sectionPoints: 0,
     questions: []
   },
@@ -237,7 +237,7 @@ export const questionsData: QuestionsData = [
         options: [
           {
             text: 'Sí',
-            value: 4
+            value: 2
           },
           {
             text: 'No',
@@ -259,30 +259,14 @@ export const questionsData: QuestionsData = [
       {
         id: '003001',
         question:
-          '¿Cómo describiría la calidad de los datos de su institución? Los datos de nuestra institución son precisos: se acercan a sus valores reales.',
+          'En su institución, ¿publican datos en formatos abiertos para uso de otras áreas, instituciones y/o ciudadanía?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -292,30 +276,14 @@ export const questionsData: QuestionsData = [
       {
         id: '003002',
         question:
-          'Los datos de nuestra institución son completos: tenemos todos los datos que necesitamos.',
+          '¿Han evidenciado proyectos u organizaciones que hacen uso de los datos que recopilan y publican?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -325,30 +293,14 @@ export const questionsData: QuestionsData = [
       {
         id: '003003',
         question:
-          'Los datos de nuestra institución son consistentes: los datos coinciden en todos nuestros sistemas.',
+          '¿Tienen un repositorio o sitio web en el cual guarden los datos que recopilan para uso de distintas áreas y/o ciudadanía?',
         options: [
           {
-            text: 'Nunca',
-            value: 0
-          },
-          {
-            text: 'A veces',
-            value: 1
-          },
-          {
-            text: 'Regularmente',
+            text: 'Sí',
             value: 2
           },
           {
-            text: 'Frecuentemente',
-            value: 3
-          },
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'No estoy seguro',
+            text: 'No',
             value: 0
           }
         ],
@@ -357,83 +309,49 @@ export const questionsData: QuestionsData = [
       },
       {
         id: '003004',
-        question: '¿Cómo gestiona su institución la calidad de los datos?',
-        options: [
-          {
-            text: 'Identificamos y eliminamos cualquier discrepancia en nuestros datos',
-            value: 1
-          },
-          {
-            text: 'Empleamos procesos para mantener nuestros datos actualizados',
-            value: 1
-          },
-          {
-            text: 'Mantenemos un registro de los activos de datos y quién es responsable de ellos',
-            value: 1
-          },
-          {
-            text: 'Ninguna de estas opciones aplica',
-            value: 1
-          },
-          {
-            text: 'No estoy seguro',
-            value: 0
-          }
-        ],
-        type: 'checkbox',
-        questionPoints: null
-      },
-      {
-        id: '003005',
         question:
-          '¿Qué políticas y prácticas utiliza su institución para mantener seguros sus datos?',
+          '¿Han implementado estándares u homologado datos para que sean compatibles con distintos sistemas?',
         options: [
           {
-            text: 'Restringimos el acceso a datos sensibles y personales',
-            value: 1
-          },
-          {
-            text: 'Eliminamos datos que ya no son necesarios',
-            value: 1
-          },
-          {
-            text: 'Monitoreamos continuamente la seguridad de nuestros datos',
-            value: 1
-          },
-          {
-            text: 'Probamos continuamente la seguridad de nuestros datos',
-            value: 1
-          },
-          {
-            text: 'Ninguna de estas opciones aplica',
-            value: 0
-          },
-          {
-            text: 'No estoy seguro',
-            value: 0
-          }
-        ],
-        type: 'checkbox',
-        questionPoints: null
-      },
-      {
-        id: '003006',
-        question: '¿Su institución comprende las regulaciones para los datos que almacena?',
-        options: [
-          {
-            text: 'Siempre',
-            value: 4
-          },
-          {
-            text: 'En cierta medida',
+            text: 'Sí',
             value: 2
           },
           {
             text: 'No',
             value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      },
+      {
+        id: '003005',
+        question:
+          '¿Ha publicado su institución datos en formato abierto durante los últimos 12 meses?',
+        options: [
+          {
+            text: 'Sí',
+            value: 2
           },
           {
-            text: 'No estoy seguro',
+            text: 'No',
+            value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      },
+      {
+        id: '003006',
+        question:
+          'En tu institución, en los últimos 12 meses, ¿han publicado datos abiertos para mejorar la transparencia y la rendición de cuentas?',
+        options: [
+          {
+            text: 'Sí',
+            value: 2
+          },
+          {
+            text: 'No',
             value: 0
           }
         ],
@@ -443,18 +361,97 @@ export const questionsData: QuestionsData = [
       {
         id: '003007',
         question:
-          '¿Su institución cuenta con al menos una persona responsable de la seguridad de los datos?',
+          'En tu institución, en los últimos 12 meses, ¿han publicado datos abiertos para fortalecer la participación ciudadana y la innovación?',
         options: [
           {
             text: 'Sí',
-            value: 4
+            value: 2
           },
           {
             text: 'No',
             value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      }
+    ]
+  },
+  {
+    section: 3,
+    sectionTitle: 'Personal: Equipo y capacidades',
+    sectionDescription:
+      'Esta sección evalúa en qué medida los servidores públicos de la institución cuentan con las habilidades y capacidades para usar y aprovechar los datos que recopilan o utilizan.',
+    sectionPoints: 0,
+    questions: [
+      {
+        id: '004001',
+        question: 'En tu institución ¿se ha conformado un equipo de trabajo de datos abiertos?',
+        options: [
+          {
+            text: 'Sí',
+            value: 2
           },
           {
-            text: 'No estoy seguro',
+            text: 'No',
+            value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      },
+      {
+        id: '004002',
+        question: '¿Con qué frecuencia reciben capacitaciones sobre el uso y gestión de datos?',
+        options: [
+          {
+            text: 'Mensual',
+            value: 4
+          },
+          {
+            text: 'Semestral',
+            value: 2
+          },
+          {
+            text: 'Anual',
+            value: 1
+          },
+          {
+            text: 'No se ha realizado hasta el momento',
+            value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      },
+      {
+        id: '004003',
+        question:
+          'La Máxima Autoridad de la institución, ¿está informada sobre la gestión de uso, aprovechamiento y publicación que se realiza con los datos que se recopilan?',
+        options: [
+          {
+            text: 'Sí',
+            value: 2
+          },
+          {
+            text: 'No',
+            value: 0
+          }
+        ],
+        type: 'radio',
+        questionPoints: null
+      },
+      {
+        id: '004004',
+        question:
+          '¿Cuentan con cargos o perfiles específicos definidos en la institución para la gestión de datos?',
+        options: [
+          {
+            text: 'Sí',
+            value: 2
+          },
+          {
+            text: 'No',
             value: 0
           }
         ],

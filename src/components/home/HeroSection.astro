@@ -1,15 +1,16 @@
 ---
-import RocketData from '@/icons/RocketData.astro'
+import HeroData from '@/icons/HeroData.astro'
 ---
 
 <div class='wave-container min-h-[calc(100vh-64px)]'>
   <section
-    class='section-container grid size-full place-content-center place-items-center gap-16 md:grid-cols-2'>
+    class='section-container relative grid size-full place-content-center place-items-center gap-16 lg:grid-cols-2'>
     <article>
-      <h1 class='mb-4 text-balance text-3xl font-bold leading-tight text-white md:text-[40px]'>
+      <h1
+        class='mb-4 text-balance text-3xl font-bold leading-tight text-primary-text md:text-[40px]'>
         TU VIAJE EN EL MUNDO DE LOS DATOS EMPIEZA AQUÍ
       </h1>
-      <p class='mb-8 font-medium text-zinc-200'>
+      <p class='mb-8 font-medium text-secondary-text'>
         La evaluación de la madurez de los datos ofrece a las organizaciones de impacto social (SIO)
         una visión instantánea de su recorrido actual hacia la madurez de los datos, así como
         herramientas y recursos relevantes para seguir adelante. Utilice los resultados para
@@ -20,7 +21,7 @@ import RocketData from '@/icons/RocketData.astro'
       <div class='grid max-w-max gap-4'>
         <a
           href='/evaluacion'
-          class='group flex h-12 w-60 select-none items-center justify-center gap-2 rounded bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none'>
+          class='group flex h-12 w-60 select-none items-center justify-center gap-2 rounded-xl bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none'>
           <span>Empezar evaluación</span>
 
           <!-- https://www.snowhouse.studio/ -->
@@ -44,7 +45,7 @@ import RocketData from '@/icons/RocketData.astro'
       </div>
     </article>
 
-    <RocketData className='ml-auto hidden h-auto w-full max-w-md md:block' />
+    <HeroData className='absolute bottom-4 right-6 -z-10 hidden h-auto w-full max-w-lg lg:block' />
   </section>
 </div>
 
@@ -64,7 +65,7 @@ import RocketData from '@/icons/RocketData.astro'
     background-size: auto;
     background-repeat: repeat no-repeat;
     background-position: 36vw bottom;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 101' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 4 51.5 7C104.5 14 200 32 300 50C400 67 500 84 600 77C700 70 800 40 900 23C987.526 4 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V101H1150C1100 101 1000 101 900 101C800 101 700 101 600 101C500 101 400 101 300 101C200 101 100 101 50 101H0V1.98128Z' fill='%23ffffff'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 101' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 4 51.5 7C104.5 14 200 32 300 50C400 67 500 84 600 77C700 70 800 40 900 23C987.526 4 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V101H1150C1100 101 1000 101 900 101C800 101 700 101 600 101C500 101 400 101 300 101C200 101 100 101 50 101H0V1.98128Z' fill='%23EBE6E0'/></svg>");
   }
 
   @media (max-width: 850px) {

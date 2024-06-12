@@ -17,15 +17,17 @@ export function EntityInfo() {
   } = useEntityStore()
 
   return (
-    <section className="space-y-8 px-4 py-8">
+    <>
       <section>
-        <label className="mb-4 block text-xl font-medium">Nombre de la institución</label>
+        <label className="mb-4 block text-2xl font-medium text-primary-text">
+          Nombre de la institución
+        </label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
           <input
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             placeholder="Escriba el nombre de su institución"
             value={institutionName}
             onChange={e => setInstitutionName(e.target.value)}
@@ -35,15 +37,17 @@ export function EntityInfo() {
       </section>
 
       <section>
-        <label className="mb-4 block text-xl font-medium">Tipo de institución</label>
+        <label className="mb-4 block text-2xl font-medium text-primary-text">
+          Tipo de institución
+        </label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
 
           <select
             id="institutionType"
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             value={institutionType ?? ''}
             onChange={e =>
               setInstitutionType(e.target.value as 'Parish' | 'Cantonal' | 'Prefecture')
@@ -66,13 +70,15 @@ export function EntityInfo() {
       </section>
 
       <section>
-        <label className="mb-4 block text-xl font-medium">Correo electrónico</label>
+        <label className="mb-4 block text-2xl font-medium text-primary-text">
+          Correo electrónico
+        </label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
           <input
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             type="email"
             placeholder="Escriba el correo electrónico de contacto de su institución"
             value={contactEmail}
@@ -83,13 +89,13 @@ export function EntityInfo() {
       </section>
 
       <section>
-        <label className="mb-4 block text-xl font-medium">Tu(s) nombre(s)</label>
+        <label className="mb-4 block text-2xl font-medium text-primary-text">Tu(s) nombre(s)</label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
           <input
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             placeholder="Escriba sus nombres"
             value={responsiblePersonName}
             onChange={e => setResponsiblePersonName(e.target.value)}
@@ -99,13 +105,15 @@ export function EntityInfo() {
       </section>
 
       <section>
-        <label className="mb-4 block text-xl font-medium">Tu(s) apellido(s)</label>
+        <label className="mb-4 block text-2xl font-medium text-primary-text">
+          Tu(s) apellido(s)
+        </label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
           <input
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             placeholder="Escriba sus apellidos"
             value={responsiblePersonLastName}
             onChange={e => setResponsiblePersonLastName(e.target.value)}
@@ -115,15 +123,15 @@ export function EntityInfo() {
       </section>
 
       <section>
-        <label className="mb-4 block text-xl font-medium">
+        <label className="mb-4 block text-2xl font-medium text-primary-text">
           Cargo o área de la entidad en el que te desempeñas
         </label>
         <div className="relative">
           <div className="absolute top-0 flex w-full justify-center">
-            <div className="h-[1px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
+            <div className="h-[2px] animate-border-width rounded bg-gradient-to-r from-[rgba(17,17,17,0)] via-primary to-[rgba(17,17,17,0)] transition-all duration-1000"></div>
           </div>
           <input
-            className="block h-16 w-full rounded border border-zinc-300 bg-white px-3 py-2 font-medium text-zinc-900 transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
+            className="block h-16 w-full rounded border-2 border-zinc-300 bg-white px-3 py-2 font-medium text-primary-text transition-colors placeholder:text-zinc-500 hover:border-primary focus:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
             type="text"
             placeholder="Escriba su cargo o área de desempeño en la institución"
             value={responsiblePersonRole}
@@ -132,6 +140,6 @@ export function EntityInfo() {
           />
         </div>
       </section>
-    </section>
+    </>
   )
 }

@@ -6,7 +6,6 @@ export function EvaluationHeaderPage() {
   const [sectionDescription, setSectionDescription] = useState('')
 
   const currentSection = useQuestionStore(state => state.currentSection)
-  const currentQuestion = useQuestionStore(state => state.currentQuestion)
   const maxQuestionSection = useQuestionStore(state => state.maxSections)
 
   const maxQuestionsPerSection = useQuestionStore(
@@ -22,20 +21,20 @@ export function EvaluationHeaderPage() {
   }, [currentSection])
 
   return (
-    <header className="bg-accent rounded-t p-4">
-      <span className="mb-8 inline-flex h-full animate-background-shine items-center justify-center rounded bg-[linear-gradient(110deg,#071E2D,45%,#10BCD0,55%,#071E2D)] bg-[length:250%_100%] px-3 py-1 text-xs font-medium text-zinc-300">
-        Sección {currentSection + 1} de {maxQuestionSection}
-      </span>
+    <header className="wave-container-white min-h-96 bg-primary py-16">
+      <div className="section-container">
+        <span className="mb-8 inline-flex h-full items-center justify-center rounded-xl bg-custom-orange px-4 py-2 text-sm font-medium text-white">
+          Sección {currentSection + 1} de {maxQuestionSection}
+        </span>
 
-      <h2 className="mb-4 text-balance text-3xl font-bold uppercase leading-tight text-white md:text-[40px]">
-        {sectionTitle}
-      </h2>
-      <p className="font-medium text-zinc-300">{sectionDescription}</p>
-      {currentSection > 0 && (
-        <p className="mt-4 w-full text-xs text-zinc-300">
-          Preguntas {currentQuestion + 1} de {maxQuestionsPerSection}
-        </p>
-      )}
+        <h2 className="mb-4 text-balance text-2xl font-semibold text-white md:text-5xl">
+          {sectionTitle}
+        </h2>
+        <p className="max-w-4xl text-lg text-zinc-50">{sectionDescription}</p>
+        {currentSection > 0 && (
+          <p className="mt-4 w-full text-sm text-zinc-50">{maxQuestionsPerSection} preguntas</p>
+        )}
+      </div>
     </header>
   )
 }

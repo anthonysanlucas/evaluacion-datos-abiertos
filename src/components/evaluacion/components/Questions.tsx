@@ -46,10 +46,10 @@ function Question() {
       {questions.map((question, questionIndex) => {
         return (
           <div key={question.id + 'question'}>
-            <span className="mb-4 inline-block font-semibold text-zinc-600">
+            <span className="mb-8 inline-block text-sm font-semibold text-secondary-text">
               Pregunta {questionIndex + 1}
             </span>
-            <h2 className="mx-auto mb-4 text-2xl font-bold leading-tight text-zinc-900 lg:mx-0">
+            <h2 className="mx-auto mb-8 font-medium leading-tight text-primary-text sm:text-2xl lg:mx-0">
               {question.question}
             </h2>
 
@@ -59,7 +59,7 @@ function Question() {
                   selectedOptions[question.id] && selectedOptions[question.id].includes(optionIndex)
                 return (
                   <li key={question.id + optionIndex + 'option'} className="rounded">
-                    <label className="grid cursor-pointer grid-cols-[max-content,1fr] place-content-start place-items-start gap-4 border bg-transparent p-4 hover:bg-zinc-800">
+                    <label className="grid min-h-16 w-full cursor-pointer grid-cols-[max-content,1fr] place-content-center place-items-center gap-4 border bg-transparent p-4 font-medium text-primary-text transition-colors hover:border-custom-orange hover:bg-custom-orange/40 focus:border-custom-orange focus:outline-none focus:ring-0 focus:ring-offset-0">
                       <input
                         type={question.type}
                         value={option.value}
@@ -72,9 +72,9 @@ function Question() {
                             handleCheckboxAnswer(question.id, option.value, optionIndex)
                           }
                         }}
-                        className="h-6 w-6 border-gray-600 bg-gray-700 accent-red-500 focus:outline-dashed"
+                        className="h-6 w-6 border text-custom-orange accent-custom-orange focus:outline-dashed focus:ring-custom-orange"
                       />
-                      <span className="text-lg text-gray-900">{option.text}</span>
+                      <p className="w-full text-lg text-primary-text">{option.text}</p>
                     </label>
                   </li>
                 )

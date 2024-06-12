@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import BenefitsSection from '@/components/home/BenefitsSection.astro'
+import BlogPostsSection from '@/components/home/BlogPostsSection.astro'
 import HeroSection from '@/components/home/HeroSection.astro'
-import HowToEvaluate from '@/components/home/HowToEvaluate.astro'
+import HowToEvaluate from '@/components/home/HowToEvaluateSection.astro'
 ---
 
 <Layout
-  titlePage='Plataforma de Monitoreo | ESTADO ABIERTO ECUADOR'
+  titlePage='Portal de Evaluación de Datos Abiertos'
   descriptionPage=''
-  currentUrl=''>
+  currentUrl=''
+  isWhiteBg={true}>
   <HeroSection />
   <BenefitsSection />
   <HowToEvaluate />
+  <BlogPostsSection />
 </Layout>

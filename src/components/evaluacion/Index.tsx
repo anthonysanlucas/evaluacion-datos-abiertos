@@ -6,6 +6,7 @@ import PageLoader from '@/components/loaders/pageLoader/PageLoader'
 import EvaluationFooterPageInfo from './components/EvaluationFooterPage'
 import Question from './components/Questions'
 import { useFormStateStore } from './stores/formStateStore'
+import EvaluationResults from './components/EvaluationResults'
 
 export function Evaluation() {
   const currentSection = useQuestionStore(state => state.currentSection)
@@ -15,12 +16,12 @@ export function Evaluation() {
 
   return (
     <>
-      <section className="section-container flex min-h-screen w-full items-center justify-center rounded py-8 md:px-8">
+      <section className="relative flex min-h-screen w-full items-center justify-center">
         {!isCompletedEvaluation && (
-          <div className="mx-auto w-full max-w-3xl bg-zinc-100 pb-8">
+          <div className="mx-auto w-full pb-8">
             <EvaluationHeaderPage />
 
-            <section className="space-y-8 px-4 py-8">
+            <section className="section-container space-y-16 py-8">
               {currentSection === 0 && <EntityInfo />}
               {currentSection > 0 && <Question />}
             </section>
@@ -29,13 +30,7 @@ export function Evaluation() {
           </div>
         )}
 
-        {isCompletedEvaluation && (
-          <>
-            <h2 className="text-center text-3xl font-bold text-zinc-50">
-              ¡Gracias por completar la evaluación!
-            </h2>
-          </>
-        )}
+        {isCompletedEvaluation && <EvaluationResults />}
         <Toaster />
       </section>
 

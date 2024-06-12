@@ -42,7 +42,7 @@ const { titlePage, descriptionPage, currentUrl, isWhiteBg = false } = Astro.prop
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
-      href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap'
+      href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap'
       rel='stylesheet'
     />
   </head>
@@ -50,9 +50,11 @@ const { titlePage, descriptionPage, currentUrl, isWhiteBg = false } = Astro.prop
     <div
       class:list={[
         { hidden: isWhiteBg },
-        { 'absolute -right-40 top-96 -z-10 m-auto h-96 w-full max-w-2xl': !isWhiteBg }
-      ]}
-      style='background:linear-gradient(106.89deg, rgba(3, 103, 166, 0.11) 15.73%, rgba(3, 103, 166, 0.24) 15.74%, rgba(3, 103, 166, 0.26) 56.49%, rgba(3, 103, 166, 0.4) 115.91%);filter:blur(118px)'>
+        {
+          'absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]':
+            !isWhiteBg
+        }
+      ]}>
     </div>
 
     <HeaderPage transition:persist />

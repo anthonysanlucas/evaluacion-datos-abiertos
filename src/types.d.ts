@@ -26,12 +26,15 @@ interface QuestionStore {
   currentQuestion: number
 
   questionsData: any
-
   maxSections: number
 
+  pointsPerSection: number[]
+  totalPoints: number
+
   nextSection: () => void
-  nextQuestion: () => void
+  setPointsPerSection: (section: number, points: number) => void
   setQuestionPoint: (questionId: string, points: number) => void
+  setTotalPoints: (points: number) => void
 }
 
 interface Entity {
