@@ -17,6 +17,6 @@ export const blogPostData: BlogPostEntry[] = [
     date: '13 de Julio, 2024',
     tags: ['Experimentado'],
     imageUrl: '/images/resources/post-001.png',
-    postUrl: '/recursos/introduccion-datos-abiertos'
+    postUrl: '/recursos/datos-abiertos'
   }
 ]

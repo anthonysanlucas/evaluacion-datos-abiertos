@@ -1,0 +1,107 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { blogPostData } from '@/data/blogPostData'
+
+const postIndex = 0
+let isShowPreviousPost = false
+let isShowNextPost = false
+let previousPost = null
+let nextPost = null
+
+if (postIndex > 0) {
+  isShowPreviousPost = true
+  previousPost = blogPostData[postIndex - 1]
+}
+
+if (postIndex < blogPostData.length - 1) {
+  isShowNextPost = true
+  nextPost = blogPostData[postIndex + 1]
+}
+
+const post = blogPostData[postIndex]
+---
+
+<Layout
+  titlePage=`${post.title} | Kit de Datos Abiertos`
+  descriptionPage={post.description}
+  currentUrl={post.postUrl}
+  isWhiteBg={true}>
+  <section class='relative'>
+    <div class='absolute -z-10 h-4/5 w-full bg-blue-accent'></div>
+
+    <div class='section-container max-w-screen-lg py-16'>
+      <h3 class='section-title mb-8 text-white'>{post.title}</h3>
+      <p class='section-subtitle mb-8 text-zinc-200'>
+        {post.description}
+      </p>
+      <img
+        class='mx-auto max-h-96 w-full rounded-xl object-cover object-center shadow-lg'
+        src={post.imageUrl}
+        alt={post.title}
+      />
+    </div>
+  </section>
+
+  <section
+    class='section-container max-w-screen-lg space-y-8 pb-16 text-lg leading-loose text-secondary-text'>
+    <p>
+      En la era digital, el dinamismo y la interconexión han transformado la manera en que la
+      sociedad interactúa con sus gobiernos. En este contexto, la <strong>transparencia</strong> y la
+      <strong>participación ciudadana</strong> emergen como pilares fundamentales para fortalecer la
+      democracia y optimizar la eficiencia en la gestión gubernamental.
+    </p>
+    <p>
+      La <strong>apertura de datos</strong> surge como una herramienta poderosa y esencial en esta misión,
+      al posibilitar que la información producida por el gobierno esté disponible de manera accesible,
+      reutilizable y comprensible para todos los ciudadanos.
+    </p>
+    <div class='border-l-4 border-custom-orange bg-custom-orange/10 p-4 text-primary'>
+      <p>
+        En este kit se proporciona una guía práctica destinada a orientar la implementación y
+        promoción efectiva de datos abiertos en sus prácticas en la gestión pública.
+      </p>
+    </div>
+    <p>
+      Al adoptar medidas que fomenten la transparencia y la accesibilidad de la información
+      gubernamental, se abre un espacio vital para el fortalecimiento de la confianza ciudadana en
+      las instituciones democráticas, así como para el impulso de la innovación y el desarrollo
+      social.
+    </p>
+    <p>
+      La apertura de datos no solo democratiza el acceso a la información gubernamental, sino que
+      también potencia la
+      <strong>participación activa de la ciudadanía</strong> en la toma de decisiones, al permitir que
+      estos datos sean analizados, cuestionados y utilizados para generar soluciones innovadoras a los
+      desafíos que enfrentan las instituciones.
+    </p>
+    <p>
+      Asimismo, facilita la <strong>rendición de cuentas</strong> por parte de las autoridades, al proporcionar
+      un mecanismo de control ciudadano sobre las acciones y políticas gubernamentales. ¡Adéntrate en
+      el mundo de los datos abiertos!
+    </p>
+  </section>
+
+  <footer class='section-container mx-auto flex max-w-screen-lg justify-between gap-8 pb-16'>
+    {
+      isShowPreviousPost && (
+        <a
+          href={previousPost.postUrl}
+          class='group block flex-1 rounded-l-xl border-r-4 border-custom-orange bg-custom-orange/10 p-4 text-blue-accent shadow-lg transition-colors hover:bg-custom-orange hover:text-white'>
+          <h3 class='text-sm font-bold text-custom-orange group-hover:text-zinc-200'>Anterior</h3>
+          <p class='mt-2 text-lg group-hover:text-white'>{previousPost.title}</p>
+        </a>
+      )
+    }
+
+    {
+      isShowNextPost && (
+        <a
+          href={nextPost.postUrl}
+          class='group block flex-1 rounded-r-xl border-l-4 border-custom-orange bg-custom-orange/10 p-4 text-blue-accent shadow-lg transition-colors hover:bg-custom-orange hover:text-white'>
+          <h3 class='text-sm font-bold text-custom-orange group-hover:text-zinc-200'>Siguiente</h3>
+          <p class='mt-2 text-lg group-hover:text-white'>{nextPost.title}</p>
+        </a>
+      )
+    }
+  </footer>
+</Layout>
