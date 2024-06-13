@@ -46,3 +46,13 @@ interface Entity {
   populationServed: number
   participationObjective: string
 }
+
+interface BlogPostEntry {
+  id: string
+  title: string
+  description: string
+  date: string
+  tags: string[]
+  imageUrl: string
+  postUrl: string
+}

@@ -1,72 +1,47 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import BenefitsSection from '@/components/home/BenefitsSection.astro'
-import BlogPostsSection from '@/components/home/BlogPostsSection.astro'
-import HeroSection from '@/components/home/HeroSection.astro'
-import HowToEvaluate from '@/components/home/HowToEvaluateSection.astro'
+import { blogPostData } from '@/data/blogPostData'
 ---
 
 <Layout titlePage='Kit de Datos Abiertos' descriptionPage='' currentUrl='' isWhiteBg={true}>
-  <section class='bg-blue-accent border-b'>
+  <section class='bg-blue-accent'>
     <div class='section-container py-16'>
-      <p class='section-subtitle text-white'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam,
-        voluptates.
+      <h3 class='section-title mb-8 text-white'>Centro de Recursos</h3>
+      <p class='section-subtitle text-zinc-200'>
+        Encontrarás herramientas, guías y conocimientos esenciales diseñados para ayudarte a
+        aprovechar al máximo el potencial de los datos.
       </p>
     </div>
   </section>
 
   <section class='section-container'>
-    <article
-      class='grid grid-cols-[1fr,max-content] place-content-center place-items-center gap-8 border-b py-8'>
-      <div>
-        <h2 class='section-title mb-8'>Explorando los datos abiertos</h2>
-        <p class='section-subtitle mb-8'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, aperiam sequi! Veniam vel
-          vero odit quasi, quisquam eaque ea? Excepturi ad cum magnam saepe possimus provident animi
-          est dicta non.
-        </p>
-
-        <footer class='text-secondary-text font-medium'>
-          <span>Explorador</span>
-          <span> | </span>
-          <span>4 minutos</span>
-          <span> | </span>
-          <span>12 de Julio, 2024</span>
-        </footer>
-      </div>
-
-      <img
-        class='w-full max-w-xs rounded-xl'
-        src='/images/resources/introduction-post.png'
-        alt=''
-      />
-    </article>
-
-    <article
-      class='grid grid-cols-[1fr,max-content] place-content-center place-items-center gap-8 border-b py-8'>
-      <div>
-        <h2 class='section-title mb-8'>Explorando los datos abiertos</h2>
-        <p class='section-subtitle mb-8'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, aperiam sequi! Veniam vel
-          vero odit quasi, quisquam eaque ea? Excepturi ad cum magnam saepe possimus provident animi
-          est dicta non.
-        </p>
-
-        <footer class='text-secondary-text font-medium'>
-          <span>Explorador</span>
-          <span> | </span>
-          <span>4 minutos</span>
-          <span> | </span>
-          <span>12 de Julio, 2024</span>
-        </footer>
-      </div>
-
-      <img
-        class='w-full max-w-xs rounded-xl'
-        src='/images/resources/introduction-post.png'
-        alt=''
-      />
-    </article>
+    {
+      blogPostData.map(post => {
+        return (
+          <a href={post.postUrl}>
+            <article class='grid cursor-pointer place-content-center place-items-center gap-8 border-b py-8 transition-transform hover:scale-[1.01] md:grid-cols-[1fr,max-content]'>
+              <img
+                class='order-1 w-full max-w-60 rounded-xl sm:max-w-xs md:order-2'
+                src={post.imageUrl}
+                alt={post.title}
+              />
+              <div class='order-2 md:order-1'>
+                <h3 class='section-title mb-8'>{post.title}</h3>
+                <p class='section-subtitle mb-8'>{post.description}</p>
+                <footer class='fonf-modium tent-medium text-se'>
+                  <span>
+                    {post.tags.map(tag => {
+                      return <span>{tag}</span>
+                    })}
+                  </span>
+                  <span> | </span>
+                  <span>{post.date}</span>
+                </footer>
+              </div>
+            </article>
+          </a>
+        )
+      })
+    }
   </section>
 </Layout>

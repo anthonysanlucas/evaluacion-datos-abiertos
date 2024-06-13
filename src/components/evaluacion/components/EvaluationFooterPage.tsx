@@ -113,23 +113,12 @@ export function EvaluationFooterPageInfo() {
 
   return (
     <footer className="section-container my-8">
-      {currentSection === 0 && (
-        <button
-          onClick={handleStartEvaluation}
-          className="group ml-auto flex h-12 w-60 select-none items-center justify-center gap-2 rounded bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none">
-          <span>Siguiente</span>
-
-          <RocketIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-2" />
-        </button>
-      )}
-      {currentSection > 0 && (
-        <button
-          onClick={handleNextSection}
-          className="group ml-auto flex h-12 w-60 select-none items-center justify-center gap-2 rounded bg-primary px-6 font-semibold text-white transition-all hover:w-64 hover:bg-custom-orange focus:outline-none">
-          <span>{currentSection === maxSections - 1 ? 'Finalizar' : 'Siguiente'}</span>
-          <RocketIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-2" />
-        </button>
-      )}
+      <button
+        onClick={currentSection === 0 ? handleStartEvaluation : handleNextSection}
+        className="group ml-auto flex h-12 w-full select-none items-center justify-center gap-2 rounded-xl bg-primary px-6 font-semibold text-white transition-all hover:bg-custom-orange focus:outline-none sm:max-w-60 sm:hover:w-64">
+        <span>{currentSection === maxSections - 1 ? 'Finalizar' : 'Siguiente'}</span>
+        <RocketIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-2" />
+      </button>
     </footer>
   )
 }

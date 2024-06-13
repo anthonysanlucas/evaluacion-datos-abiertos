@@ -13,10 +13,10 @@ const navLinks = [
 ]
 ---
 
-<header class='sticky top-0 z-50 border-b backdrop-blur-xl'>
-  <nav class='section-container border-gray-200 py-2'>
+<header class='sticky top-0 z-50 border-b bg-white backdrop-blur-xl'>
+  <nav class='section-container py-2'>
     <div class='mx-auto flex flex-wrap items-center justify-between'>
-      <a href='/' class='text-primary-text flex items-center space-x-3 rtl:space-x-reverse'>
+      <a href='/' class='flex items-center space-x-3 text-primary-text rtl:space-x-reverse'>
         <img class='max-w-60' src='/images/logo-kit-de-datos.png' alt='' />
       </a>
       <button
@@ -42,7 +42,7 @@ const navLinks = [
       </button>
       <div class='hidden w-full md:block md:w-auto' id='navbar-default'>
         <ul
-          class='mt-4 flex flex-col rounded border border-gray-100 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 md:px-4 md:py-3 rtl:space-x-reverse'>
+          class='mt-4 flex flex-col rounded border border-gray-100 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse'>
           {
             navLinks.map(link => (
               <li>
