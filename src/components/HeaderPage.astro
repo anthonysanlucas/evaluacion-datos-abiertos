@@ -1,14 +1,29 @@
 ---
 const navLinks = [
   {
-    id: 'recursos',
-    name: 'Recursos',
-    url: '/recursos'
+    id: 'inicio',
+    name: 'Inicio',
+    url: '/'
+  },
+  {
+    id: 'acerca',
+    name: 'Acerca de',
+    url: '/acerca-de'
   },
   {
     id: 'evaluacion',
     name: 'Evaluación',
     url: '/evaluacion'
+  },
+  {
+    id: 'recursos',
+    name: 'Recursos',
+    url: '/recursos'
+  },
+  {
+    id: 'contacto',
+    name: 'Contacto',
+    url: '/contacto'
   }
 ]
 ---
@@ -65,18 +80,37 @@ const navLinks = [
 </header>
 
 <script is:inline>
-  document.addEventListener('astro:page-load', () => {
-    const resourcesLinkActive = document.getElementById('recursos')
+  document.addEventListener('DOMContentLoaded', () => {
+    const homeLinkActive = document.getElementById('inicio')
+    const aboutLinkActive = document.getElementById('acerca')
     const evaluationLinkActive = document.getElementById('evaluacion')
+    const resourcesLinkActive = document.getElementById('recursos')
+    const contactLinkActive = document.getElementById('contacto')
 
     const pathName = window.location.pathname
+
+    console.log(pathName)
+
+    console.log('HOLAA')
+
+    if (pathName === '/') {
+      homeLinkActive.style.width = '100%'
+    }
+
+    if (pathName === '/acerca-de') {
+      aboutLinkActive.style.width = '100%'
+    }
+
+    if (pathName === '/evaluacion') {
+      evaluationLinkActive.style.width = '100%'
+    }
 
     if (pathName === '/recursos') {
       resourcesLinkActive.style.width = '100%'
     }
 
-    if (pathName === '/evaluacion') {
-      evaluationLinkActive.style.width = '100%'
+    if (pathName === '/contacto') {
+      contactLinkActive.style.width = '100%'
     }
   })
 </script>

@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
 import HeaderPage from '@/components/HeaderPage.astro'
 import FooterPage from '@/components/FooterPage.astro'
 import '@/styles/main.css'
@@ -21,7 +20,6 @@ const { titlePage, descriptionPage, currentUrl, isWhiteBg = false } = Astro.prop
     <meta charset='UTF-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <ViewTransitions />
     <title>{titlePage}</title>
     <meta name='title' content={titlePage} />
     <meta name='description' content={descriptionPage} />
