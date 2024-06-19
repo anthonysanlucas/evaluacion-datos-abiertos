@@ -4,7 +4,7 @@ import { blogPostData } from '@/data/blogPostData'
 ---
 
 <Layout titlePage='Kit de Datos Abiertos' descriptionPage='' currentUrl='' isWhiteBg={true}>
-  <section class='bg-blue-accent'>
+  <section class='bg-gradient-to-r from-blue-800 to-indigo-900'>
     <div class='section-container py-16'>
       <h3 class='section-title mb-8 text-white'>Centro de Recursos</h3>
       <p class='section-subtitle text-zinc-200'>
@@ -21,14 +21,14 @@ import { blogPostData } from '@/data/blogPostData'
           <a href={post.postUrl}>
             <article class='grid cursor-pointer place-content-center place-items-center gap-8 border-b py-8 transition-transform hover:scale-[1.01] md:grid-cols-[1fr,max-content]'>
               <img
-                class='order-1 w-full max-w-60 rounded-xl sm:max-w-xs md:order-2'
+                class='order-1 w-full max-w-40 rounded-xl md:order-2'
                 src={post.imageUrl}
                 alt={post.title}
               />
-              <div class='order-2 md:order-1'>
-                <h3 class='section-title mb-8'>{post.title}</h3>
-                <p class='section-subtitle mb-8'>{post.description}</p>
-                <footer class='fonf-modium tent-medium text-se'>
+              <div class='order-2 w-full md:order-1'>
+                <h3 class='section-title mb-4'>{post.title}</h3>
+                <p class='section-subtitle mb-4'>{post.description}</p>
+                <footer class='fonf-modium tent-medium text-sm'>
                   <span>
                     {post.tags.map(tag => {
                       return <span>{tag}</span>

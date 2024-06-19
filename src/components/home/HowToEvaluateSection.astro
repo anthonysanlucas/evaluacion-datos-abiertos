@@ -2,19 +2,19 @@
 const howToEvaluate = [
   {
     title: 'Propósito',
-    bgColor: 'bg-[#F9F8F7]',
+    bgColor: 'bg-gradient-to-r from-red-500 to-orange-500',
     description:
       'Identifica el nivel de impulso que pueden aportar los datos abiertos en las estrategias, decisiones y procesos dentro de tu institución.'
   },
   {
     title: 'Práctica',
-    bgColor: 'bg-[#EBE6E0]',
+    bgColor: 'bg-gradient-to-r from-emerald-400 to-cyan-400',
     description:
       'Explora cómo se utilizan, aprovechan y comparten los datos abiertos dentro y fuera de la entidad.'
   },
   {
     title: 'Personal',
-    bgColor: 'bg-[#F9F8F7]',
+    bgColor: 'bg-gradient-to-r to-amber-300 from-yellow-400',
     description:
       'Evalúa la capacidad de quienes laboran en la institución con relación al uso y gestión de los datos para sacarles mayor provecho.'
   }
@@ -62,8 +62,8 @@ const howToEvaluate = [
         {
           howToEvaluate.map(how => (
             <article class:list={how.bgColor} class='group relative w-full p-8 md:h-64'>
-              <h4 class='my-4 text-3xl font-bold text-primary-text'>{how.title}</h4>
-              <p class='font-medium leading-7 text-secondary-text'>{how.description}</p>
+              <h4 class='my-4 text-3xl font-bold text-white'>{how.title}</h4>
+              <p class='font-medium leading-7 text-zinc-200'>{how.description}</p>
             </article>
           ))
         }
