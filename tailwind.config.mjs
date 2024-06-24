@@ -12,7 +12,7 @@ export default {
         'secondary-text': '#4C5F6C',
         'custom-orange': '#41CAD9',
         'custom-yellow': '#F8D45C',
-        'blue-accent': '#0c2b4a'
+        'blue-accent': '#115C84'
       },
       fontFamily: {
         sans: ['Lato', 'sans-serif']

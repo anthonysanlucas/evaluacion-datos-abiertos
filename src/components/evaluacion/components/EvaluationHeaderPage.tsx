@@ -21,7 +21,7 @@ export function EvaluationHeaderPage() {
   }, [currentSection])
 
   return (
-    <header className="wave-container-white bg-blue-accent min-h-96 py-16">
+    <header className="wave-container-white min-h-96 bg-gradient-to-r from-cyan-600 to-green-500 py-16">
       <div className="section-container">
         <span className="mb-8 inline-flex h-full items-center justify-center rounded-xl bg-custom-orange px-4 py-2 text-sm font-medium text-white">
           Sección {currentSection + 1} de {maxQuestionSection}
